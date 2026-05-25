@@ -17,6 +17,9 @@ setup(
             glob('config/*.yaml')),
         ('share/' + package_name + '/config/maps',
             glob('config/maps/*')),
+        ('share/' + package_name + '/launch',
+        ['launch/ml_pose.launch.py'],
+	),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -32,6 +35,7 @@ setup(
     entry_points={
         'console_scripts': [
             'runner_node = robo_project.runner_node2:main',
+            'ml_pose_node = robo_project.ml_pose_node:main',
         ],
     },
 )
